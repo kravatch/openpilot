@@ -12,6 +12,7 @@ VisualAlert = car.CarControl.HUDControl.VisualAlert
 
 class CarController():
   def __init__(self, dbc_name, CP, VM):
+    self.CP = CP
     self.start_time = 0.
     self.apply_steer_last = 0
     self.apply_gas = 0

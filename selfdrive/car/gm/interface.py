@@ -62,7 +62,7 @@ class CarInterface(CarInterfaceBase):
     ret.lateralTuning.pid.kf = 0.00004   # full torque for 20 deg at 80mph means 0.00007818594
     ret.steerRateCost = 1.0
     ret.steerActuatorDelay = 0.1  # Default delay, not measured yet
-    ret.longitudinalActuatorDelayUpperBound = 0.5
+    ret.longitudinalActuatorDelayUpperBound = 1.0
 
     if candidate == CAR.VOLT:
       # supports stop and go, but initial engage must be above 18mph (which include conservatism)

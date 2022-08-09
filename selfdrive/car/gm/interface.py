@@ -200,9 +200,10 @@ class CarInterface(CarInterfaceBase):
       events.add(car.CarEvent.EventName.belowSteerSpeed)
 
     # handle button presses
+    resume_enabled = c.hudControl.setSpeed < 70
     for b in ret.buttonEvents:
       # do enable on both accel and decel buttons
-      if b.type in (ButtonType.accelCruise, ButtonType.decelCruise) and not b.pressed:
+      if (b.type == ButtonType.decelCruise or (b.type == ButtonType.accelCruise and resume_enabled)) and not b.pressed:
         events.add(EventName.buttonEnable)
       # do disable on button down
       if b.type == ButtonType.cancel and b.pressed:

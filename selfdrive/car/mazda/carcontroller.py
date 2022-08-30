@@ -55,7 +55,7 @@ class CarController:
       # TODO: find a way to silence audible warnings so we can add more hud alerts
       # steer_required = steer_required and CS.lkas_allowed_speed
       steer_required = CS.out.steerFaultTemporary
-      can_sends.append(mazdacan.create_alert_command(self.packer, CS.cam_laneinfo, ldw, steer_required, new_steer, CC.latActive))
+      can_sends.append(mazdacan.create_alert_command(self.packer, CS.cam_laneinfo, ldw, steer_required, apply_steer, CC.latActive))
 
     # send steering command
     can_sends.append(mazdacan.create_steering_control(self.packer, self.CP.carFingerprint,
